@@ -49,60 +49,9 @@ h3{
     font-family: 'Poppins', sans-serif;
     letter-spacing: .02em;
     color: #151515;
+    
 }
-/* Khai bao chuyen dong */
-.animate__fadeInLeft{
-    animation: animate__fadeInLeft;
-}
-@keyframes animate__fadeInLeft{
-    0%{
-        opacity: 0;
-        transform: translate3d(-40px,0,0);
-    }
-    100%{
-        opacity: 1;
-        transform: none;
-    }
-}
-.fadeScale{
-    animation-name: fadeScale ;
-}
-@keyframes fadeScale{
-    0%{
-        opacity: 0;
-        transform: scale(0.5);
-    }
-    100%{
-        opacity: 1;
-        transform:none;
-    }
-}
-.animate__fadeInRight{
-    animation-name: animate__fadeInRight ;
-}
-@keyframes animate__fadeInRight{
-    0%{
-        opacity: 0;
-        transform: translate3d(40px,0,0)
-    }
-    100%{
-        opacity: 1;
-        transform:none;
-    }
-}
-.fadeInUp{
-    animation: fadeInUp ;
-}
-@keyframes fadeInUp{
-    0%{
-        opacity: 0;
-        transform: translate3d(0,40px,0);
-    }
-    100%{
-        opacity: 1;
-        transform:none;
-    }
-}
+
 .button-secondary{
     background-color: #e9da5d;
     color:#151515; 
@@ -141,7 +90,7 @@ h3{
     border-radius: 50%;
     transform: translate3d(-50%, -50%, 0) scale(1);
     transition: inherit;
-    pointer-events: none;
+    /* pointer-events: none; */
     z-index: -1;
     
 }
@@ -266,6 +215,7 @@ a{
     overflow:hidden;
     position: relative;
     transform:translate3d(0px,0px,0px); 
+    box-shadow:0 0 24px 0 rgb(0 0 0 / 15%);
 }
 .carousel__content{
     transform:translate3d(0px,0px,0px);
@@ -275,7 +225,7 @@ a{
     position: relative;
     min-height: 1px;
     float: left;
-
+    
 }
 .carousel__pages, .carousel-indicators{
     text-align: center;
@@ -379,17 +329,16 @@ a{
 .btn-next:hover::after{
     transform: scaleX(0.7);
 }
-.carousel-item a{
-    display: block;
-    box-shadow:0 0 24px 0 rgb(0 0 0 / 15%);
+.carousel-item .pages-classic a{
+    display:block;
+    
     transition: all .3s ease;
+    will-change: transform;
 }
-.carousel-item .pages-classic {
+.carousel__content .carousel-item >* {
     opacity: .3;
     transition: all .4s linear;
-    max-width: 770px;
     pointer-events: none;
-    display: block;
 }
 .carousel-item.active .pages-classic {
     opacity: 1;
@@ -551,4 +500,61 @@ a{
     visibility: visible;
     opacity: .6;
     transform: translate3d(0,0,0);
-  }
+}
+/* Khai bao chuyen dong */
+.fadeInLeft{
+    animation:fadeInLeft;
+    animation-duration: 1s;
+}
+@keyframes fadeInLeft{
+    0%{
+        opacity: 0;
+        transform: translate3d(-40px,0,0);
+    }
+    100%{
+        opacity: 1;
+        transform: none;
+    }
+}
+.fadeScale{
+    animation-name: fadeScale ;
+    animation-duration: 1s;
+}
+@keyframes fadeScale{
+    0%{
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100%{
+        opacity: 1;
+        transform:none;
+    }
+}
+.fadeInRight{
+    animation-name:fadeInRight ;
+    animation-duration: 1s;
+}
+@keyframes fadeInRight{
+    0%{
+        opacity: 0;
+        transform: translate3d(40px,0,0)
+    }
+    100%{
+        opacity: 1;
+        transform:none;
+    }
+}
+.fadeInUp{
+    animation: fadeInUp ;
+    animation-duration: 1s;
+}
+@keyframes fadeInUp{
+    0%{
+        opacity: 0;
+        transform: translate3d(0,40px,0);
+    }
+    100%{
+        opacity: 1;
+        transform:none;
+    }
+}
